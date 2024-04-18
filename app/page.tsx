@@ -1,23 +1,20 @@
-import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import styles from '@/app/ui/home.module.css'
-import { lusitana } from '@/app/ui/fonts';
-import Image from 'next/image';
+import ArticleTitle from './component/articleTitle';
+import { fetchArticleList } from './lib/data';
+import Nav from './component/Nav';
 
-export default function Page() {
+
+export default async function Page() {
+  const list = await fetchArticleList()
   return (
-    <main className='flex place-content-center'>
-      <nav className="container mx-auto flex ">
-        <div>首页</div>
-        <div className='flex'>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+    <main className='w-screen'>
+      <Nav />
+      <div className='h-full flex justify-center pt-12'>
+        <div className='w-9/12 bg-[#fff]'>
+          {
+            list.map((item: any) => <ArticleTitle item={item} />)
+          }
         </div>
-      </nav>
-      {/* <div>111</div> */}
+      </div>
     </main>
   );
 }

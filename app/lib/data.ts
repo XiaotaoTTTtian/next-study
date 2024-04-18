@@ -1,3 +1,4 @@
+
 import { sql } from '@vercel/postgres';
 import {
   CustomerField,
@@ -19,14 +20,36 @@ export async function fetchRevenue() {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    // console.log('Fetching revenue data...');
+
     // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    // console.log('Data fetch completed after 3 seconds.');
+
 
     return data.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch revenue data.');
+  }
+}
+
+export async function fetchArticleList() {
+  noStore()
+  try {
+    const data = await sql`SELECT * FROM articles`;
+    return data.rows
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch revenue data.');
+  }
+}
+
+export async function getArticleContent(params: { id: number }) {
+  noStore()
+  try {
+    const data = await sql`SELECT * FROM article_content WHERE article_id = ${params.id};`
+    return data.rows[0]
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch revenue data.');
@@ -167,7 +190,7 @@ export async function fetchInvoiceById(id: string) {
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
     }));
-    console.log(invoice);
+
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);

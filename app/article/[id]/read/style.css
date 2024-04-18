@@ -1,0 +1,202 @@
+/* Markdown 样式 */
+
+/* 设置全局字体和行高 */
+/* body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+} */
+
+/* 设置标题样式 */
+.article h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.article h1 { font-size: 2.2em; }
+.article h2 { font-size: 1.8em; }
+.article h3 { font-size: 1.4em; }
+.article h4 { font-size: 1.2em; }
+.article h5 { font-size: 1em; }
+.article h6 { font-size: 0.9em; }
+
+/* 设置段落样式 */
+.article p {
+  margin-bottom: 20px;
+}
+
+/* 设置链接样式 */
+.article a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 设置列表样式 */
+.article ul, ol {
+  list-style: disc;
+    margin: 20px auto;
+    padding: revert;
+  /* margin-bottom: 20px; */
+}
+
+.article li {
+  margin-bottom: 5px;
+}
+
+/* 设置代码块样式 */
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  padding: 10px;
+  overflow: auto;
+}
+
+code {
+  font-family: Consolas, monospace;
+}
+
+/* 设置引用样式 */
+blockquote {
+  margin: 0;
+  padding: 10px 20px;
+  border-left: 5px solid #007bff;
+  background-color: #f8f9fa;
+}
+
+/* 设置水平线样式 */
+hr {
+  border: none;
+  border-top: 1px solid #e1e4e8;
+  margin: 20px 0;
+}
+
+/* 设置图片样式 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*!
+ * StackOverflow.com dark style
+ *
+ * @stackoverflow/stacks v0.56.0
+ * https://github.com/StackExchange/Stacks
+ */
+
+ pre {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #2f3337;
+  background: #f6f6f6;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+pre {
+  position: relative;
+  padding-top: 2em;
+}
+
+pre::before {
+  content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fd6458;
+    box-shadow: 20px 0 0 #ffbf2b, 40px 0 0 #24cc3d;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+
+.hljs-comment {
+  color: #656e77;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-section,
+.hljs-selector-class,
+.hljs-meta,
+.hljs-selector-pseudo,
+.hljs-attr {
+  color: #015692;
+}
+
+.hljs-attribute {
+  color: #803378;
+}
+
+.hljs-name,
+.hljs-type,
+.hljs-number,
+.hljs-selector-id,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-built_in,
+.hljs-title,
+.hljs-literal {
+  color: #b75501;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-meta-string {
+  color: #54790d;
+}
+
+.hljs-bullet,
+.hljs-code {
+  color: #535a60;
+}
+
+.hljs-deletion {
+  color: #c02d2e;
+}
+
+.hljs-addition {
+  color: #2f6f44;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
