@@ -11,7 +11,7 @@ export default async function Page() {
       <div className='h-full flex justify-center pt-12'>
         <div className='w-9/12 bg-[#fff]'>
           {
-            list.map((item: any) => <ArticleTitle item={item} />)
+            list.map((item: any) => <ArticleTitle item={item} key={item.article_id} />)
           }
         </div>
       </div>
